@@ -4,10 +4,8 @@ import java.util.Scanner;
 public class LineCompare
 {
 	@SuppressWarnings("resource")
-	public static void main(String[] args)
+	public static Double Compare()
 	{
-		System.out.println("####...Welcome to Line Comparision Computation...####");
-		
 		Scanner sc = new Scanner (System.in);
 		System.out.println("\nEnter the first cordinates of x1");
 		int a = sc.nextInt();
@@ -26,14 +24,16 @@ public class LineCompare
 		switch(comp)
 		{
 			case 0:
-				System.out.println("\nEquality of 2 Length is preferable"); break;
+				System.out.println("\nLines are Equal"); break;
 			case -1:	
 				System.out.println("\nLength of 2nd line is Greater then 1st line"); break;
 			case 1:	
-				System.out.println("\nLength of 1nd line is Greater then 2nd line"); break;
+				System.out.println("\nLength of 1st line is Greater then 2nd line"); break;
 		}		
 		int e = (((c-a)*(c-a))+((d-b)*(d-b)));		
 		System.out.println("\nThe Length of a line is:" +squareRoot(e));
+		return null;
+		
 	}
 	public static double squareRoot (int e) {
 		double f;
@@ -45,5 +45,11 @@ public class LineCompare
 		}
 		while((f-sqrtroot)!=0);
 		return sqrtroot;
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("####...Welcome to Line Comparision Computation...####");
+		LineCompare line = new LineCompare();
+		LineCompare.Compare();
 	}
 }
