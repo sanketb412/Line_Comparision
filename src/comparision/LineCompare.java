@@ -11,27 +11,28 @@ public class LineCompare
 		Scanner sc = new Scanner (System.in);
 		System.out.println("\nEnter the first cordinates of x1");
 		int a = sc.nextInt();
-		System.out.println("\nEnter the first cordinates of y1");
+		System.out.println("Enter the first cordinates of y1");
 		int b = sc.nextInt();
-		System.out.println("\nEnter the first cordinates of x2");
+		System.out.println("Enter the first cordinates of x2");
 		int c = sc.nextInt();
-		System.out.println("\nEnter the first cordinates of y2");
+		System.out.println("Enter the first cordinates of y2");
 		int d = sc.nextInt();
 		System.out.println("\nA length as 2 Points are:(" +a +"," +b +")and(" +c +"," +d +")");
 		
-		Integer x = c - a;
-		Integer y = d - b;
+		Integer x = a - b;
+		Integer y = c - d;
 		
-		if(x.equals(y))
+		int comp=(x.compareTo(y));
+		switch(comp)
 		{
-			System.out.println("Equality of 2 Length is preferable");
-		}	
-		else
-		{		
-			System.out.println("Equality of 2 Length is not preferable");
-		}
-		int e = ((x*x)+(y*y));
-		
+			case 0:
+				System.out.println("\nEquality of 2 Length is preferable"); break;
+			case -1:	
+				System.out.println("\nLength of 2nd line is Greater then 1st line"); break;
+			case 1:	
+				System.out.println("\nLength of 1nd line is Greater then 2nd line"); break;
+		}		
+		int e = (((c-a)*(c-a))+((d-b)*(d-b)));		
 		System.out.println("\nThe Length of a line is:" +squareRoot(e));
 	}
 	public static double squareRoot (int e) {
